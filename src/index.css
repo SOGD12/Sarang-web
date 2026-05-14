@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+/* ─── Variables ─────────────────────────────── */
+:root {
+  --soft-black: #1A1A1A;
+  --rose-gold: #B76E79;
+  --whatsapp-green: #25D366;
+  --gold-accent: #D4AF37;
+  --muted-gray: #757575;
+  --ivory-bg: #FDFBF7;
+}
+
+/* ─── Base ───────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: var(--ivory-bg);
+  color: var(--soft-black);
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; }
+
+/* ─── Typography ─────────────────────────────── */
+.font-serif  { font-family: 'Playfair Display', serif; }
+.font-label-caps {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+/* ─── Color helpers ──────────────────────────── */
+.bg-ivory        { background-color: var(--ivory-bg); }
+.bg-soft-black   { background-color: var(--soft-black); }
+.text-rose-gold  { color: var(--rose-gold); }
+.text-gold-accent{ color: var(--gold-accent); }
+.text-muted-gray { color: var(--muted-gray); }
+
+/* ─── Navbar ─────────────────────────────────── */
+.navbar {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.nav-link-custom {
+  color: var(--soft-black);
+  text-decoration: none;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.3s;
+  padding: 0.25rem 0;
+}
+.nav-link-custom:hover { color: var(--rose-gold); }
+
+/* ─── Navbar mobile ──────────────────────────── */
+.navbar-collapse .nav-link-custom {
+  padding: 0.6rem 0;
+  font-size: 13px;
+  /* border-bottom: 1px solid rgba(0,0,0,0.06); */
+}
+
+.navbar-collapse .nav-link-custom:last-child {
+  border-bottom: none;
+}
+
+/* Toggle button más limpio */
+.navbar-toggler {
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0.25rem 0.4rem;
+}
+.navbar-toggler:focus { box-shadow: none !important; }
+
+/* ─── Buttons ────────────────────────────────── */
+.btn-whatsapp {
+  background-color: var(--whatsapp-green) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 50px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.btn-whatsapp:hover {
+  opacity: 0.9;
+  color: white !important;
+  transform: scale(1.03);
+}
+
+/* ─── Hero ───────────────────────────────────── */
+.hero-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(253,251,247,0.25) 0%,
+    rgba(253,251,247,0.45) 100%
+  );
+}
+
+/* Escala tipografía del hero en móvil */
+@media (max-width: 575.98px) {
+  .hero-title { font-size: 2rem !important; line-height: 1.2; }
+  .hero-badge  { font-size: 10px !important; }
+}
+
+/* ─── Trust Bar ──────────────────────────────── */
+.trust-bar-item {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+  .trust-bar-item { font-size: 10px; }
+}
+
+/* ─── Product Card ───────────────────────────── */
+.product-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none !important;
+  background: white;
+  border-radius: 1.25rem !important;
+  overflow: hidden;
+}
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.10) !important;
+}
+
+/* Imagen cuadrada sin deformarse */
+.product-card .card-img-top {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Texto de tarjeta más pequeño en móvil */
+@media (max-width: 575.98px) {
+  .product-card .card-body { padding: 0.65rem !important; }
+  .product-card h5         { font-size: 0.85rem !important; }
+  .product-card .small     { font-size: 0.7rem !important; }
+  .product-card .fw-bold   { font-size: 0.85rem; }
+  .product-card .btn       { font-size: 9px !important; padding: 0.4rem 0.5rem !important; }
+}
+
+/* ─── Carousel ───────────────────────────────── */
+.best-sellers-carousel { position: relative; }
+
+/* Flechas visibles sobre fondo claro */
+.best-sellers-carousel .carousel-control-prev,
+.best-sellers-carousel .carousel-control-next {
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: var(--soft-black);
+  border-radius: 50%;
+  opacity: 1;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  /* Saca las flechas del área de las tarjetas */
+  position: absolute;
+}
+
+.best-sellers-carousel .carousel-control-prev { left: 0; }
+.best-sellers-carousel .carousel-control-next { right: 0; }
+
+.best-sellers-carousel .carousel-control-prev-icon,
+.best-sellers-carousel .carousel-control-next-icon {
+  width: 18px;
+  height: 18px;
+  background-size: 100%;
+  filter: brightness(0) invert(1); /* blanco sobre negro */
+}
+
+.best-sellers-carousel .carousel-control-prev:hover,
+.best-sellers-carousel .carousel-control-next:hover {
+  background-color: var(--rose-gold);
+  opacity: 1;
+}
+
+/* Ocultar indicadores (respaldo CSS adicional a indicators={false}) */
+.best-sellers-carousel .carousel-indicators { display: none !important; }
+
+/* Padding lateral para que las tarjetas no tapen las flechas */
+.best-sellers-carousel .carousel-inner {
+  padding: 0.5rem 2.75rem;
+}
+
+@media (max-width: 575.98px) {
+  .best-sellers-carousel .carousel-inner  { padding: 0.5rem 2.25rem; }
+  .best-sellers-carousel .carousel-control-prev { left: -4px; }
+  .best-sellers-carousel .carousel-control-next { right: -4px; }
+}
+
+/* ─── Sección "Sobre Nosotros" ───────────────── */
+@media (max-width: 767.98px) {
+  .about-images .col-6:last-child { padding-top: 1.5rem !important; }
+}
+
+/* ─── Sección Contacto ───────────────────────── */
+@media (max-width: 575.98px) {
+  .contact-form { padding: 1.5rem !important; }
+}
+
+/* ─── Footer ─────────────────────────────────── */
+footer a {
+  transition: color 0.2s;
+}
+footer a:hover { color: var(--rose-gold) !important; }
+
+@media (max-width: 767.98px) {
+  footer .display-6 { font-size: 1.75rem; }
+}
+
+/* ─── Floating WhatsApp ──────────────────────── */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 1000;
+  width: 56px;
+  height: 56px;
+  background-color: var(--whatsapp-green);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.45);
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+.floating-whatsapp:hover {
+  transform: scale(1.1) rotate(10deg);
+  color: white;
+}
+
+@media (max-width: 575.98px) {
+  .floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
