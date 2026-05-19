@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link  } from 'react-router-dom';
 import { Navbar, Nav, Container, Row, Col, Button, Card, Form, Carousel } from 'react-bootstrap';
 import { ShoppingBag, Heart, MessageCircle, Star, Truck, Diamond, Droplets, Sun, Package, Wind, Moon } from 'lucide-react';
 import Collections from './pages/Collections';
@@ -129,7 +129,9 @@ const App = () => {
             <Navbar.Collapse id="main-nav" className="justify-content-center">
               <Nav className="gap-lg-4">
                 <Nav.Link className="nav-link-custom" href="/">Inicio</Nav.Link>
-                <Nav.Link className="nav-link-custom" href="/colecciones">Colecciones</Nav.Link>
+                <Nav.Link as={Link} to="/colecciones">
+                 Colecciones
+                </Nav.Link>
                 <Nav.Link className="nav-link-custom" href="#sobre-nosotros">Sobre Nosotros</Nav.Link>
                 <Nav.Link className="nav-link-custom" href="#cuidado-joyas">Cuidado de Joyas</Nav.Link>
                 <Nav.Link className="nav-link-custom" href="#contacto">Contacto</Nav.Link>
