@@ -7,7 +7,7 @@ import { ShoppingBag, Heart, MessageCircle, Star, Truck, Diamond, Droplets, Sun,
 import Contacto from './pages/Contacto';
 import CuidadoJoyas from './pages/CuidadoJoyas';
 import SobreNosotros from './pages/SobreNosotros';
-import Collections from './pages/collections';
+import Collections from './pages/Collections';
 import NavbarSarah from './pages/navbar';
 import Footer from './pages/footer';
 
