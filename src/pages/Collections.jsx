@@ -1,12 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { Container, Row, Col, Button, Card, Form, Nav, Navbar } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react';
+import { Container, Row, Col, Button, Card, Form, Nav, Navbar, Modal } from 'react-bootstrap';
 import { MessageCircle, Search, Heart } from 'lucide-react';
 import productosData from '../data/productos.json';
+
+
+// Pages
+import NavbarSarah from './navbar';
+import Footer from './footer';
+
 
 const Collections = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('Todos');
   const [filteredProducts, setFilteredProducts] = useState(productosData);
+  const [showImageModal, setShowImageModal] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const productsRef = useRef(null);
+
+  const handleImageClick = (imageSrc) => {
+    setSelectedImage(imageSrc);
+    setShowImageModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowImageModal(false);
+    setSelectedImage(null);
+  };
 
   const categories = ['Todos', ...new Set(productosData.map(p => p.category))];
 
@@ -30,34 +49,10 @@ const Collections = () => {
   return (
     <div className="min-vh-100 bg-ivory">
       {/* Navbar (Reusable from App, but here for page context) */}
-      <Navbar bg="white" expand="lg" className="py-3 sticky-top border-bottom">
-        <Container>
-          <Navbar.Brand className="font-serif fw-bold fs-4" href="/">Sarang</Navbar.Brand>
-          <div className="d-flex d-lg-none align-items-center gap-2 ms-auto me-2">
-            <Button className="btn-whatsapp d-flex align-items-center gap-2 py-2 px-3" style={{fontSize: '11px'}}>
-              <MessageCircle size={14} /> WhatsApp
-            </Button>
-          </div>
-          <Navbar.Toggle aria-controls="main-nav" />
-          <Navbar.Collapse id="main-nav" className="justify-content-center">
-            <Nav className="gap-lg-4">
-              <Nav.Link className="nav-link-custom" href="/">Inicio</Nav.Link>
-              <Nav.Link className="nav-link-custom active" href="/colecciones">Colecciones</Nav.Link>
-              <Nav.Link className="nav-link-custom" href="/#sobre-nosotros">Sobre Nosotros</Nav.Link>
-              <Nav.Link className="nav-link-custom" href="/#cuidado-joyas">Cuidado de Joyas</Nav.Link>
-              <Nav.Link className="nav-link-custom" href="/#contacto">Contacto</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-          <div className="d-none d-lg-flex">
-            <Button className="btn-whatsapp d-flex align-items-center gap-2">
-              <MessageCircle size={16} /> WhatsApp
-            </Button>
-          </div>
-        </Container>
-      </Navbar>
+      <NavbarSarah />
 
       {/* Header */}
-      <div className="text-center py-5 bg-white">
+      <div className="text-center py-5 bg-white" style={{ marginTop: '72px' }}>
         <Container>
           <h1 className="font-serif display-4 fw-bold mb-3">Colecciones</h1>
           <p className="text-muted-gray max-w-600 mx-auto">
@@ -67,14 +62,28 @@ const Collections = () => {
       </div>
 
       {/* Filters Section */}
-      <div className="sticky-top bg-white shadow-sm py-3" style={{ top: '72px', zIndex: 1020 }}>
+      <div className="filters-sticky shadow-sm">
         <Container>
           <Row className="align-items-center g-3">
             <Col md={6} className="d-flex gap-2 overflow-auto pb-2 pb-md-0" style={{ scrollbarWidth: 'none' }}>
               {categories.map(cat => (
-                <Button 
+                <Button
                   key={cat}
-                  onClick={() => setActiveCategory(cat)}
+                  onClick={() => {
+                    setActiveCategory(cat);
+                    if (window.innerWidth < 768) {
+                      const offset = 100;
+                      const elementPosition = productsRef.current?.getBoundingClientRect().top || 0;
+                      const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+                      window.scrollTo({
+                        top: offsetPosition < 0 ? 0 : offsetPosition,
+                        behavior: 'smooth'
+                      });
+                    } else {
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
                   className={`rounded-pill px-3 py-2 font-label-caps small transition-all ${activeCategory === cat ? 'bg-rose-gold text-white border-0' : 'bg-white text-dark border'}`}
                   style={{ fontSize: '10px' }}
                 >
@@ -83,9 +92,9 @@ const Collections = () => {
               ))}
             </Col>
             <Col md={6}>
-              <Form.Control 
-                type="text" 
-                placeholder="¿Qué joya estás buscando?" 
+              <Form.Control
+                type="text"
+                placeholder="¿Qué joya estás buscando?"
                 className="rounded-pill border-muted-gray py-2 px-4"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
@@ -97,7 +106,7 @@ const Collections = () => {
       </div>
 
       {/* Products Grid */}
-      <Container className="py-5">
+      <Container className="py-5" ref={productsRef}>
         <Row className="g-4">
           {filteredProducts.length > 0 ? (
             filteredProducts.map(product => (
@@ -117,11 +126,12 @@ const Collections = () => {
                     >
                       <Heart size={16} />
                     </Button> */}
-                    <Card.Img 
-                      variant="top" 
-                      src={product.image} 
-                      className="transition-transform" 
-                      style={{ aspectRatio: '1/1', objectFit: 'cover' }}
+                    <Card.Img
+                      variant="top"
+                      src={product.image}
+                      className="transition-transform"
+                      style={{ aspectRatio: '1/1', objectFit: 'cover', cursor: 'pointer' }}
+                      onClick={() => handleImageClick(product.image)}
                     />
                   </div>
                   <Card.Body className="p-3">
@@ -162,45 +172,32 @@ const Collections = () => {
       </Container>
 
       {/* Footer (Shared) */}
-      <footer className="bg-soft-black text-white py-5 mt-5">
-        <Container>
-          <Row className="gy-5">
-            <Col md={3} className="text-center text-md-start">
-              <h2 className="font-serif display-6 fw-bold mb-3">Sarang</h2>
-              <p className="font-serif italic text-white-50 small mb-4">Cada pieza, una historia. Cada historia, tuya.</p>
-            </Col>
-            <Col md={3} className="text-center text-md-start">
-              <h4 className="font-label-caps small fw-bold text-gold-accent mb-4">Colecciones</h4>
-              <ul className="list-unstyled text-white-50 small">
-                <li><a href="/" className="text-decoration-none text-white-50">Inicio</a></li>
-                <li><a href="/colecciones" className="text-decoration-none text-white-50">Colecciones</a></li>
-              </ul>
-            </Col>
-            <Col md={3} className="text-center text-md-start">
-              <h4 className="font-label-caps small fw-bold text-gold-accent mb-4">Información</h4>
-              <ul className="list-unstyled text-white-50 small">
-                <li><a href="/#sobre-nosotros" className="text-decoration-none text-white-50">Sobre Nosotros</a></li>
-                <li><a href="/#cuidado-joyas" className="text-decoration-none text-white-50">Cuidado de Joyas</a></li>
-              </ul>
-            </Col>
-            <Col md={3} className="text-center text-md-start">
-              <h4 className="font-label-caps small fw-bold text-gold-accent mb-4">Contacto</h4>
-              <p className="text-white-50 small mb-4">Estamos en Cali, envíos a todo el país.</p>
-              <Button className="btn-whatsapp d-flex align-items-center justify-content-center gap-2 mx-auto mx-md-0">
-                <MessageCircle size={16} /> WHATSAPP
-              </Button>
-            </Col>
-          </Row>
-          <div className="border-t border-white-10 pt-4 mt-5 text-center text-white-50 font-label-caps" style={{fontSize: '10px'}}>
-            © 2025 SARANG — BISUTERÍA ARTESANAL COLOMBIANA
-          </div>
-        </Container>
-      </footer>
+      <Footer />
 
       {/* Floating WhatsApp */}
       <a href="#" className="floating-whatsapp" target="_blank">
         <MessageCircle size={32} />
       </a>
+
+      <Modal
+        show={showImageModal}
+        onHide={handleCloseModal}
+        centered
+        size="lg"
+        className="image-modal"
+      >
+        <Modal.Header closeButton className="border-0 px-4 pt-4">
+          <Modal.Title className="font-serif fs-5">Vista Previa</Modal.Title>
+        </Modal.Header>
+        <Modal.Body className="text-center p-0 overflow-hidden">
+          <img
+            src={selectedImage}
+            alt="Producto Sarang"
+            className="img-fluid w-100"
+            style={{ maxHeight: '85vh', objectFit: 'contain' }}
+          />
+        </Modal.Body>
+      </Modal>
     </div>
   );
 };

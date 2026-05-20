@@ -1,0 +1,106 @@
+/* ─── Responsive Styles ────────────────────────── */
+
+/* Large screens and below (1024px) - General Layout */
+@media (max-width: 1024px) {
+  #center {
+    padding: 32px 20px 24px;
+    gap: 18px;
+  }
+  #next-steps > div {
+    padding: 24px 20px;
+  }
+  #next-steps {
+    flex-direction: column;
+    text-align: center;
+  }
+  #docs {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+  #next-steps ul {
+    margin-top: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #next-steps ul li {
+    flex: 1 1 calc(50% - 8px);
+  }
+  #next-steps ul a {
+    width: 100%;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  #spacer {
+    height: 48px;
+  }
+}
+
+/* Tablets and mobile (767.98px) */
+@media (max-width: 767.98px) {
+  .about-images .col-6:last-child {
+    padding-top: 1.5rem !important;
+  }
+  footer .display-6 {
+    font-size: 1.75rem;
+  }
+}
+
+/* Mobile devices (575.98px) */
+@media (max-width: 575.98px) {
+  .hero-title {
+    font-size: 2rem !important;
+    line-height: 1.2;
+  }
+  .hero-badge {
+    font-size: 10px !important;
+  }
+  .trust-bar-item {
+    font-size: 10px;
+  }
+  .product-card .card-body {
+    padding: 0.65rem !important;
+  }
+  .product-card h5 {
+    font-size: 0.85rem !important;
+  }
+  .product-card .small {
+    font-size: 0.7rem !important;
+  }
+  .product-card .fw-bold {
+    font-size: 0.85rem;
+  }
+  .product-card .btn {
+    font-size: 9px !important;
+    padding: 0.4rem 0.5rem !important;
+  }
+  .best-sellers-carousel .carousel-inner {
+    padding: 0.5rem 2.25rem;
+  }
+  .best-sellers-carousel .carousel-control-prev {
+    left: -4px;
+  }
+  .best-sellers-carousel .carousel-control-next {
+    right: -4px;
+  }
+  .contact-form {
+    padding: 1.5rem !important;
+  }
+  .floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+
+@media (max-width: 575.98px) {
+
+
+  .floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
+

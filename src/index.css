@@ -42,7 +42,18 @@ img { max-width: 100%; height: auto; }
 .navbar {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  background-color: var(--ivory-bg); 
+  z-index: 1030; 
 }
+
+/* .navbar.sticky-top {
+    position: sticky !important;
+    top: 0;
+    z-index: 1030;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+  } */
 
 .nav-link-custom {
   color: var(--soft-black);
@@ -59,14 +70,12 @@ img { max-width: 100%; height: auto; }
 .navbar-collapse .nav-link-custom {
   padding: 0.6rem 0;
   font-size: 13px;
-  /* border-bottom: 1px solid rgba(0,0,0,0.06); */
 }
 
 .navbar-collapse .nav-link-custom:last-child {
   border-bottom: none;
 }
 
-/* Toggle button más limpio */
 .navbar-toggler {
   border: none !important;
   box-shadow: none !important;
@@ -89,7 +98,7 @@ img { max-width: 100%; height: auto; }
 .btn-whatsapp:hover {
   opacity: 0.9;
   color: white !important;
-  transform: scale(1.03);
+   opacity: 0.9;
 }
 
 /* ─── Hero ───────────────────────────────────── */
@@ -101,21 +110,11 @@ img { max-width: 100%; height: auto; }
   );
 }
 
-/* Escala tipografía del hero en móvil */
-@media (max-width: 575.98px) {
-  .hero-title { font-size: 2rem !important; line-height: 1.2; }
-  .hero-badge  { font-size: 10px !important; }
-}
-
 /* ─── Trust Bar ──────────────────────────────── */
 .trust-bar-item {
   font-size: 11px;
   letter-spacing: 0.08em;
   white-space: nowrap;
-}
-
-@media (max-width: 575.98px) {
-  .trust-bar-item { font-size: 10px; }
 }
 
 /* ─── Product Card ───────────────────────────── */
@@ -131,26 +130,15 @@ img { max-width: 100%; height: auto; }
   box-shadow: 0 1rem 2.5rem rgba(0,0,0,0.10) !important;
 }
 
-/* Imagen cuadrada sin deformarse */
 .product-card .card-img-top {
   aspect-ratio: 1 / 1;
   object-fit: cover;
   width: 100%;
 }
 
-/* Texto de tarjeta más pequeño en móvil */
-@media (max-width: 575.98px) {
-  .product-card .card-body { padding: 0.65rem !important; }
-  .product-card h5         { font-size: 0.85rem !important; }
-  .product-card .small     { font-size: 0.7rem !important; }
-  .product-card .fw-bold   { font-size: 0.85rem; }
-  .product-card .btn       { font-size: 9px !important; padding: 0.4rem 0.5rem !important; }
-}
-
 /* ─── Carousel ───────────────────────────────── */
 .best-sellers-carousel { position: relative; }
 
-/* Flechas visibles sobre fondo claro */
 .best-sellers-carousel .carousel-control-prev,
 .best-sellers-carousel .carousel-control-next {
   width: 40px;
@@ -161,7 +149,6 @@ img { max-width: 100%; height: auto; }
   border-radius: 50%;
   opacity: 1;
   box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  /* Saca las flechas del área de las tarjetas */
   position: absolute;
 }
 
@@ -173,7 +160,7 @@ img { max-width: 100%; height: auto; }
   width: 18px;
   height: 18px;
   background-size: 100%;
-  filter: brightness(0) invert(1); /* blanco sobre negro */
+  filter: brightness(0) invert(1);
 }
 
 .best-sellers-carousel .carousel-control-prev:hover,
@@ -182,39 +169,18 @@ img { max-width: 100%; height: auto; }
   opacity: 1;
 }
 
-/* Ocultar indicadores (respaldo CSS adicional a indicators={false}) */
 .best-sellers-carousel .carousel-indicators { display: none !important; }
 
-/* Padding lateral para que las tarjetas no tapen las flechas */
 .best-sellers-carousel .carousel-inner {
   padding: 0.5rem 2.75rem;
 }
 
-@media (max-width: 575.98px) {
-  .best-sellers-carousel .carousel-inner  { padding: 0.5rem 2.25rem; }
-  .best-sellers-carousel .carousel-control-prev { left: -4px; }
-  .best-sellers-carousel .carousel-control-next { right: -4px; }
-}
-
-/* ─── Sección "Sobre Nosotros" ───────────────── */
-@media (max-width: 767.98px) {
-  .about-images .col-6:last-child { padding-top: 1.5rem !important; }
-}
-
-/* ─── Sección Contacto ───────────────────────── */
-@media (max-width: 575.98px) {
-  .contact-form { padding: 1.5rem !important; }
-}
 
 /* ─── Footer ─────────────────────────────────── */
 footer a {
   transition: color 0.2s;
 }
 footer a:hover { color: var(--rose-gold) !important; }
-
-@media (max-width: 767.98px) {
-  footer .display-6 { font-size: 1.75rem; }
-}
 
 /* ─── Floating WhatsApp ──────────────────────── */
 .floating-whatsapp {
@@ -238,12 +204,20 @@ footer a:hover { color: var(--rose-gold) !important; }
   transform: scale(1.1) rotate(10deg);
   color: white;
 }
+.filters-sticky {
+  margin: 0;
+  position: sticky;
+  top: 70px;
+  z-index: 1020;
+  background: white;
+  padding: 1rem 0;
+  
 
-@media (max-width: 575.98px) {
-  .floating-whatsapp {
-    width: 48px;
-    height: 48px;
-    bottom: 16px;
-    right: 16px;
-  }
+  /* FIX TEMBLOR */
+  -webkit-transform: translate3d(0,0,0);
+
+  contain: layout paint;
+}
+.filters-sticky .col-md-6 {
+  min-height: 42px;
 }
