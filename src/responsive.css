@@ -91,6 +91,13 @@
     bottom: 16px;
     right: 16px;
   }
+  .text-desc-joyas{
+    font-size: 0.9rem;
+  }
+  .text-title-joyas {
+  font-family: serif;
+  font-size: 1rem !important;
+}
 }
 
 @media (max-width: 575.98px) {

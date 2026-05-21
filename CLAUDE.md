@@ -12,7 +12,7 @@ Preview Build: npm run preview
 
 Framework: React 19 with Vite.
 Routing: Managed by react-router-dom in src/App.jsx.
-Styling: Uses react-bootstrap and custom CSS (src/App.css, src/index.css).
+Styling: Uses react-bootstrap and custom CSS (src/index.css)
 Project Structure:
 
 src/pages/: Contains main page components (e.g., Collections.jsx).

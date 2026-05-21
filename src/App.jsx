@@ -10,6 +10,7 @@ import SobreNosotros from './pages/SobreNosotros';
 import Collections from './pages/Collections';
 import NavbarSarah from './pages/navbar';
 import Footer from './pages/footer';
+import Testimonials from './pages/Testimonials';
 
 //images -> Home
 import home from './assets/img/home/incio/1.webp';
@@ -230,6 +231,7 @@ const App = () => {
       
         {/* Sobre Nosotros */}
         <SobreNosotros />
+        <Testimonials />
       
         {/* Cuidado de Joyas */}
         <CuidadoJoyas />

@@ -18,11 +18,11 @@ const CuidadoJoyas = () => {
         <Row className="g-4">
           {tips.map((item, idx) => (
             <Col key={idx} md={4} className="mb-3">
-              <Card className="product-card h-100 p-4 text-center border-0 shadow-sm">
+              <Card className="product-card  h-100 p-4 text-center border-0 shadow-sm">
                 <Card.Body>
                   <div className="text-rose-gold mb-3" style={{ fontSize: '1.5rem' }}>{item.icon}</div>
-                  <h5 className="font-serif fw-bold mb-3">{item.title}</h5>
-                  <p className="text-muted-gray small">{item.desc}</p>
+                  <h5 className="font-serif mb-3 text-title-joyas">{item.title}</h5>
+                  <p className="text-muted-gray text-desc-joyas">{item.desc}</p>
                 </Card.Body>
               </Card>
             </Col>
