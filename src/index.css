@@ -100,7 +100,6 @@ img { max-width: 100%; height: auto; }
 .btn-whatsapp:hover {
   opacity: 0.9;
   color: white !important;
-   opacity: 0.9;
 }
 
 /* ─── Hero ───────────────────────────────────── */
@@ -235,6 +234,7 @@ footer a:hover { color: var(--rose-gold) !important; }
   border-radius: 1.5rem !important;
   box-shadow: 0 1rem 1rem rgb(var(--shadow-color));
   transition: transform 0.3s ease;
+  min-height: 140px;
 }
 .testimonial-card:hover {
   transform: translateY(-0.75rem);

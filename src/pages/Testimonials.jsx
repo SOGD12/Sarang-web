@@ -18,7 +18,7 @@ const testimonials = [
 ];
 
 const TestimonialCard = ({ t }) => (
-  <Card className="testimonial-card h-100 p-4 text-center border-0 shadow-sm">
+  <Card className="testimonial-card h-100 p-3 text-center border-0 shadow-sm">
     <Card.Body>
       <p className="font-serif mb-3" style={{ fontSize: '.95rem' }}>
         "{t.quote}"

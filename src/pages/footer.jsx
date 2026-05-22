@@ -29,7 +29,13 @@ const Footer = () => {
           <Col md={3} className="text-center text-md-start">
             <h4 className="font-label-caps small fw-bold text-gold-accent mb-4">Contacto</h4>
             <p className="text-white-50 small mb-4">Estamos en Cali, envíos a todo el país.</p>
-            <Button className="btn-whatsapp d-flex align-items-center justify-content-center gap-2 mx-auto mx-md-0">
+            <Button
+              as="a"
+              href={`https://wa.me/573162911767?text=${encodeURIComponent('¡Hola! Quiero hacerte una consulta sobre tus piezas artesanales.')}`}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-whatsapp d-flex align-items-center justify-content-center gap-2 mx-auto mx-md-0"
+            >
               <MessageCircle size={16} /> WHATSAPP
             </Button>
           </Col>

@@ -89,15 +89,5 @@
     "material": "Piedra Volcánica",
     "image": "/img/coleccion/8.webp",
     "tags": []
-  },
-  {
-    "id": 9,
-    "name": "Pulsera Mantra",
-    "category": "Pulseras",
-    "price": 70000,
-    "description": "Pulsera ajustable con piedras volcánicas",
-    "material": "Piedra Volcánica",
-    "image": "/img/coleccion/8.webp",
-    "tags": []
   }
 ]

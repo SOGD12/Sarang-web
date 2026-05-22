@@ -3,10 +3,10 @@
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 Development Commands
 
-# Develop: npm run dev
-Build: npm run build
-Lint: npm run lint
-Preview Build: npm run preview
+# Develop: pnpm dev
+Build: pnpm build
+Lint: pnpm lint
+Preview Build: pnpm preview
 
 # Architecture and Structure
 
@@ -33,3 +33,7 @@ Typography: Always use the existing fonts defined in the project. When implement
 Framework awareness: This project uses Vite. Do not include unnecessary HTML calls inside JSX. Keep JSX clean and idiomatic.
 React usage: Use only what is necessary from React. Avoid over-engineering; prefer simplicity and readability.
 Change approval workflow: Before making any change, always provide context explaining what you intend to do and why. No change should be implemented without explicit approval first.
+
+## IMPORTANT 
+
+Use only pnpm to install package 

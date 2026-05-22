@@ -1,18 +1,14 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Container, Row, Col, Button, Card, Form, Nav, Navbar, Modal } from 'react-bootstrap';
-import { MessageCircle, Search, Heart } from 'lucide-react';
+import { useState, useMemo, useRef } from 'react';
+import { Container, Row, Col, Button, Card, Form, Modal } from 'react-bootstrap';
+import { MessageCircle } from 'lucide-react';
 import productosData from '../data/productos.json';
 
-
-// Pages
 import NavbarSarah from './navbar';
 import Footer from './footer';
-
 
 const Collections = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeCategory, setActiveCategory] = useState('Todos');
-  const [filteredProducts, setFilteredProducts] = useState(productosData);
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedImage, setSelectedImage] = useState(null);
   const productsRef = useRef(null);
@@ -29,7 +25,7 @@ const Collections = () => {
 
   const categories = ['Todos', ...new Set(productosData.map(p => p.category))];
 
-  useEffect(() => {
+  const filteredProducts = useMemo(() => {
     let filtered = productosData;
 
     if (activeCategory !== 'Todos') {
@@ -43,12 +39,11 @@ const Collections = () => {
       );
     }
 
-    setFilteredProducts(filtered);
+    return filtered;
   }, [searchTerm, activeCategory]);
 
   return (
     <div className="min-vh-100 bg-ivory">
-      {/* Navbar (Reusable from App, but here for page context) */}
       <NavbarSarah />
 
       {/* Header */}
@@ -71,18 +66,10 @@ const Collections = () => {
                   key={cat}
                   onClick={() => {
                     setActiveCategory(cat);
-                    if (window.innerWidth < 768) {
-                      const offset = 100;
-                      const elementPosition = productsRef.current?.getBoundingClientRect().top || 0;
-                      const offsetPosition = elementPosition + window.pageYOffset - offset;
-
-                      window.scrollTo({
-                        top: offsetPosition < 0 ? 0 : offsetPosition,
-                        behavior: 'smooth'
-                      });
-                    } else {
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }
+                    const filterEl = document.querySelector('.filters-sticky');
+                    const filterBottom = filterEl ? filterEl.getBoundingClientRect().bottom : 130;
+                    const y = (productsRef.current?.getBoundingClientRect().top || 0) + window.scrollY - filterBottom;
+                    window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
                   }}
                   className={`rounded-pill px-3 py-2 font-label-caps small transition-all ${activeCategory === cat ? 'bg-rose-gold text-white border-0' : 'bg-white text-dark border'}`}
                   style={{ fontSize: '10px' }}
@@ -120,12 +107,6 @@ const Collections = () => {
                         </span>
                       ))}
                     </div>
-                    {/* <Button 
-                      className="position-absolute top-0 end-0 m-2 rounded-circle bg-white text-rose-gold border-0 shadow-sm z-3 hover-scale"
-                      style={{ width: '32px', height: '32px', padding: 0 }}
-                    >
-                      <Heart size={16} />
-                    </Button> */}
                     <Card.Img
                       variant="top"
                       src={product.image}
@@ -144,8 +125,12 @@ const Collections = () => {
                     <p className="fw-bold mb-3" style={{ color: 'var(--soft-black)' }}>
                       ${product.price.toLocaleString()}
                     </p>
-                    <Button 
-                      className="btn-whatsapp w-100 py-2 rounded-pill font-label-caps" 
+                    <Button
+                      as="a"
+                      href={`https://wa.me/573162911767?text=${encodeURIComponent(`¡Hola! Me interesa "${product.name}" (${product.material}). ¿Está disponible?`)}`}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="btn-whatsapp w-100 py-2 rounded-pill font-label-caps"
                       style={{ fontSize: '10px' }}
                     >
                       Pedir por WhatsApp
@@ -171,11 +156,10 @@ const Collections = () => {
         </Row>
       </Container>
 
-      {/* Footer (Shared) */}
       <Footer />
 
       {/* Floating WhatsApp */}
-      <a href="#" className="floating-whatsapp" target="_blank">
+      <a href={`https://wa.me/573162911767?text=${encodeURIComponent('¡Hola! Estuve viendo sus colecciones y tengo algunas consultas. ¿Me ayudan?')}`} className="floating-whatsapp" target="_blank" rel="noreferrer">
         <MessageCircle size={32} />
       </a>
 
