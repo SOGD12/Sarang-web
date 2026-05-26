@@ -5,16 +5,16 @@ import { MessageCircle } from 'lucide-react';
 
 const NavbarSarah = () => {
   const location = useLocation();
-  const [expanded, setExpanded] = useState(false);   // ✅ controla el collapse
+  const [expanded, setExpanded] = useState(false);   
 
   const isActive = (path) => location.pathname === path;
 
-  const closeNav = () => setExpanded(false);          // ✅ cierra al hacer clic
+  const closeNav = () => setExpanded(false);          
 
   return (
     <Navbar bg="white" expand="lg" className="py-3 fixed-top border-bottom"
       expanded={expanded}
-      onToggle={(val) => setExpanded(val)}             // ✅ sincroniza el toggle
+      onToggle={(val) => setExpanded(val)}             
     >
       <Container>
         <Navbar.Brand className="font-serif fw-bold fs-4" as={Link} to="/">Sarang</Navbar.Brand>
@@ -30,6 +30,7 @@ const NavbarSarah = () => {
                 closeNav();
                 if (isActive('/')) {
                   e.preventDefault();
+                  window.history.replaceState(null, '', '/');  
                   window.scrollTo({ top: 0, behavior: 'smooth' }); // ✅ sube al top en vez de recargar
                 } else {
                   window.scrollTo({ top: 0, behavior: 'instant' }); // ✅ top antes de render
