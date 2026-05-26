@@ -137,6 +137,41 @@ img { max-width: 100%; height: auto; }
   width: 100%;
 }
 
+/* ─── Collection Card ───────────────────────────────── */
+.collection-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: white;
+}
+.collection-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+}
+.collection-card .card-img-top {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.collection-card .card-img-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0.8rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  color: #fff;
+  text-align: center;
+  font-weight: 600;
+}
+.collection-card .card-img-overlay h5 {
+  margin: 0;
+  font-size: 1rem;
+}
+
 /* ─── Carousel ───────────────────────────────── */
 .best-sellers-carousel { position: relative; }
 
@@ -178,6 +213,30 @@ img { max-width: 100%; height: auto; }
 
 
 /* ─── Footer ─────────────────────────────────── */
+
+/* Category card overlay */
+.product-card .overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.6);
+  color: var(--ivory-bg);
+  text-align: center;
+  padding: 0.5rem 0;
+  font-family: "Playfair Display", serif;
+  font-size: 1rem;
+  transition: transform .3s;
+}
+
+.product-card:hover .overlay {
+  transform: translateY(-8px);
+}
+
+/* Add relative positioning to product-card */
+.product-card {
+  position: relative;
+}
 footer a {
   transition: color 0.2s;
 }

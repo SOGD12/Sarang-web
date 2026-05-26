@@ -111,3 +111,86 @@
   }
 }
 
+/* ─── Modal producto - móvil ─────────────────── */
+@media (max-width: 575.98px) {
+
+  /* Ocupa casi toda la pantalla */
+  .image-modal .modal-dialog {
+    margin: 0.5rem;
+    max-width: calc(100% - 1rem);
+  }
+
+  .image-modal .modal-content {
+    border-radius: 1rem;
+  }
+
+  /* Header más compacto */
+  .image-modal .modal-header {
+    padding: 0.75rem 1rem 0.5rem !important;
+  }
+
+  .image-modal .modal-title {
+    font-size: 1rem !important;
+  }
+
+  /* Body sin exceso de padding */
+  .image-modal .modal-body {
+    padding: 0.75rem 1rem 1.25rem !important;
+  }
+
+  /* Imagen centrada, altura controlada */
+  .image-modal .modal-body img {
+    max-height: 55vh !important;   /* ← evita que tape el botón */
+    width: 100% !important;
+    object-fit: contain;
+    margin: 0 auto !important;
+    display: block;
+    border-radius: 0.75rem;
+  }
+
+  /* Nombre y precio más compactos */
+  .image-modal .modal-body h5 {
+    font-size: 0.95rem;
+    margin-top: 0.75rem !important;
+    margin-bottom: 0.25rem;
+  }
+
+  .image-modal .modal-body p.fw-bold {
+    font-size: 0.9rem;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Botón WhatsApp visible y con buen tamaño táctil */
+  .image-modal .modal-body .btn-whatsapp {
+    font-size: 11px !important;
+    padding: 0.6rem 1rem !important;
+    min-height: 35px;
+  }
+}
+
+/* ─── Modal producto - desktop ───────────────── */
+@media (min-width: 992px) {
+
+  .image-modal .modal-dialog {
+    max-width: 480px;   /* ← ancho máximo del modal */
+  }
+
+  .image-modal .modal-body img {
+    max-height: 400px !important;
+    object-fit: contain;
+    border-radius: 0.75rem;
+  }
+
+  .image-modal .modal-title {
+    font-size: 1.1rem;
+  }
+
+  .image-modal .modal-body h5 {
+    font-size: 1rem;
+    margin-top: 0.75rem !important;
+  }
+
+  .image-modal .modal-body p.fw-bold {
+    font-size: 0.95rem;
+  }
+}

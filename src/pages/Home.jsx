@@ -81,7 +81,7 @@ const bestSellers = [
     name: "Esencia Natural",
     material: "Turquesa y Cobre",
     price: "$70.000",
-    image: bestSellers8,
+    image: bestSellers8, 
     badge: "Sustentable"
   }
 ];
