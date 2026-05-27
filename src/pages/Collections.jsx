@@ -1,38 +1,65 @@
 import { useState, useMemo, useRef, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, Modal } from 'react-bootstrap';
 import { MessageCircle } from 'lucide-react';
+import { useParams, useNavigate } from 'react-router-dom';
 import productosData from '../data/productos.json';
 import NavbarSarah from './navbar';
 import Footer from './footer';
 
+const slugify = (str) => str.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
+const findCategory = (slug) => {
+  const cats = [...new Set(productosData.map(p => p.category))];
+  return cats.find(c => slugify(c) === slug) || null;
+};
+const findProductBySlug = (slug, category) => {
+  return productosData.find(p => slugify(p.name) === slug && p.category === category) || null;
+};
+
 const Collections = () => {
-  const [view, setView] = useState('categories');
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const { category: categorySlug, productSlug } = useParams();
+  const navigate = useNavigate();
   const [showImageModal, setShowImageModal] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const productsRef = useRef(null);
 
   const categories = useMemo(() => [...new Set(productosData.map(p => p.category))], []);
 
+  const view = categorySlug ? 'products' : 'categories';
+
+  const selectedCategory = useMemo(() => {
+    if (!categorySlug) return null;
+    return findCategory(categorySlug);
+  }, [categorySlug]);
+
   const handleCategoryClick = (cat) => {
-    setSelectedCategory(cat);
-    setView('products');
+    navigate(`/colecciones/${slugify(cat)}`);
   };
 
   const handleImageClick = (product) => {
-    setSelectedProduct(product);
-    setShowImageModal(true);
+    navigate(`/colecciones/${categorySlug}/${slugify(product.name)}`, { state: { noScroll: true } });
   };
 
   const handleCloseModal = () => {
-    setShowImageModal(false);
-    setSelectedProduct(null);
+    navigate(`/colecciones/${categorySlug}`, { state: { noScroll: true } });
   };
 
   const filteredProducts = useMemo(() => {
     if (!selectedCategory) return [];
     return productosData.filter(p => p.category === selectedCategory);
   }, [selectedCategory]);
+
+  useEffect(() => {
+    if (productSlug && selectedCategory) {
+      const product = findProductBySlug(productSlug, selectedCategory);
+      if (product) {
+        setSelectedProduct(product);
+        setShowImageModal(true);
+      }
+    } else {
+      setShowImageModal(false);
+      setSelectedProduct(null);
+    }
+  }, [productSlug, selectedCategory]);
 
   useEffect(() => {
     if (view === 'products') {
@@ -44,17 +71,19 @@ const Collections = () => {
     <div className="min-vh-100 bg-ivory">
       <NavbarSarah />
 
-      <div className="text-center py-4 bg-white" style={{ marginTop: '72px' }}>
+      <div className="text-center py-4 py-md-5 bg-white collections-header" style={{ marginTop: '72px' }}>
         <Container>
-          <h1 className="font-serif display-4 fw-bold mb-3">Colecciones</h1>
-          {view === 'products' && (
-            <p className="text-muted-gray max-w-600 mx-auto">{selectedCategory}</p>
+          <h1 className="font-serif fw-bold mb-3 collections-title">Colecciones</h1>
+          {view === 'categories' ? (
+            <p className="text-muted-gray max-w-600 mx-auto collections-desc">Piezas artesanales únicas, hechas a mano para ti</p>
+          ) : (
+            <p className="text-muted-gray max-w-600 mx-auto collections-desc">{selectedCategory}</p>
           )}
           {view === 'products' && (
             <Button
               variant="outline-dark"
               className="rounded-pill font-label-caps"
-              onClick={() => setView('categories')}
+              onClick={() => navigate('/colecciones')}
             >
               &lt; Volver a categorías
             </Button>
@@ -93,7 +122,7 @@ const Collections = () => {
           <Row className="g-4">
             {filteredProducts.length > 0 ? (
               filteredProducts.map(product => (
-                <Col key={product.id} xs={12} sm={6} lg={3} className="mb-4">
+                <Col key={product.id} xs={6} sm={6} lg={3} className="mb-4">
                   <Card className="product-card h-100">
                     <div className="position-relative">
                       <div className="position-absolute top-0 start-0 m-2 z-3">

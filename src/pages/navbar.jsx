@@ -47,9 +47,53 @@ const NavbarSarah = () => {
             >
               Colecciones
             </Nav.Link>
-            <Nav.Link href="#sobre-nosotros" className="nav-link-custom" onClick={closeNav}>Sobre Nosotros</Nav.Link>
-            <Nav.Link href="#cuidado-joyas" className="nav-link-custom" onClick={closeNav}>Cuidado de Joyas</Nav.Link>
-            <Nav.Link href="#contacto" className="nav-link-custom" onClick={closeNav}>Contacto</Nav.Link>
+            <Nav.Link
+  href="#sobre-nosotros"
+  className="nav-link-custom"
+  onClick={(e) => {
+    e.preventDefault();
+    closeNav();
+    if (isActive('/')) {
+      document.querySelector('#sobre-nosotros')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#sobre-nosotros';
+    }
+  }}
+>
+  Sobre Nosotros
+</Nav.Link>
+
+<Nav.Link
+  href="#cuidado-joyas"
+  className="nav-link-custom"
+  onClick={(e) => {
+    e.preventDefault();
+    closeNav();
+    if (isActive('/')) {
+      document.querySelector('#cuidado-joyas')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#cuidado-joyas';
+    }
+  }}
+>
+  Cuidado de Joyas
+</Nav.Link>
+
+<Nav.Link
+  href="#contacto"
+  className="nav-link-custom"
+  onClick={(e) => {
+    e.preventDefault();
+    closeNav();
+    if (isActive('/')) {
+      document.querySelector('#contacto')?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contacto';
+    }
+  }}
+>
+  Contacto
+</Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <div className="d-none d-lg-flex">

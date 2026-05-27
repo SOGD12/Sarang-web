@@ -43,6 +43,9 @@
   footer .display-6 {
     font-size: 1.75rem;
   }
+  .collections-title {
+    font-size: 2.5rem;
+  }
 }
 
 /* Mobile devices (575.98px) */
@@ -99,9 +102,18 @@
   font-size: 1rem !important;
 }
 }
-
 @media (max-width: 575.98px) {
-
+  .collections-header {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  .collections-title {
+    font-size: 2rem !important;
+  }
+  .collections-desc {
+    font-size: 0.9rem !important;
+    max-width: 280px !important;
+  }
 
   .floating-whatsapp {
     width: 48px;
