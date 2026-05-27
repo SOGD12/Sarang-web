@@ -5,6 +5,7 @@
   --soft-black: #1A1A1A;
   --rose-gold: #B76E79;
   --whatsapp-green: #25D366;
+  --whatsapp-nude: #d3c5c8;
   --gold-accent: #D4AF37;
   --muted-gray: #757575;
   --ivory-bg: #FDFBF7;
@@ -87,7 +88,7 @@ img { max-width: 100%; height: auto; }
 
 /* ─── Buttons ────────────────────────────────── */
 .btn-whatsapp {
-  background-color: var(--whatsapp-green) !important;
+  background-color: var(--whatsapp-nude) !important;
   color: white !important;
   border: none !important;
   border-radius: 50px;
