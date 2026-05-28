@@ -89,6 +89,13 @@ const bestSellers = [
 ];
 
 const Home = () => {
+  // LOADING
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, []);
+
   const [itemsPerSlide, setItemsPerSlide] = useState(
     window.innerWidth >= 992 ? 4 : window.innerWidth >= 576 ? 2 : 1
   );
@@ -125,6 +132,9 @@ const Home = () => {
 
   return (
     <div className="min-vh-100">
+      <div className={`loading-overlay${loading ? '' : ' fade-out'}`}>
+        <div className="spinner" />
+      </div>
       <NavbarSarah />
 
       {/* Hero Section */}

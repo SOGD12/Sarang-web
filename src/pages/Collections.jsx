@@ -1,4 +1,4 @@
-import { useMemo, useRef, useEffect } from 'react';
+import { useState, useMemo, useRef, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, Modal } from 'react-bootstrap';
 import { MessageCircle } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -14,6 +14,12 @@ const Collections = () => {
   const { category: categorySlug, productSlug } = useParams();
   const navigate = useNavigate();
   const productsRef = useRef(null);
+  // LOADING
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 600);
+    return () => clearTimeout(timer);
+  }, []);
 
   const view = categorySlug ? 'products' : 'categories';
 
@@ -54,6 +60,9 @@ const Collections = () => {
 
   return (
     <div className="min-vh-100 bg-ivory">
+      <div className={`loading-overlay${loading ? '' : ' fade-out'}`}>
+        <div className="spinner" />
+      </div>
       <NavbarSarah />
 
       <div className="text-center py-4 py-md-5 bg-white collections-header" style={{ marginTop: '72px' }}>
