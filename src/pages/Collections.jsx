@@ -16,10 +16,12 @@ const Collections = () => {
   const productsRef = useRef(null);
   // LOADING
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    const timer = setTimeout(() => setLoading(false), 600);
+    setLoading(true);
+    const timer = setTimeout(() => setLoading(false), 500);
     return () => clearTimeout(timer);
-  }, []);
+  }, [categorySlug]);
 
   const view = categorySlug ? 'products' : 'categories';
 

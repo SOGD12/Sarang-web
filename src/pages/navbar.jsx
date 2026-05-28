@@ -31,9 +31,9 @@ const NavbarSarah = () => {
                 if (isActive('/')) {
                   e.preventDefault();
                   window.history.replaceState(null, '', '/');  
-                  window.scrollTo({ top: 0, behavior: 'smooth' }); // ✅ sube al top en vez de recargar
+                  window.scrollTo({ top: 0, behavior: 'smooth' }); 
                 } else {
-                  window.scrollTo({ top: 0, behavior: 'instant' }); // ✅ top antes de render
+                  window.scrollTo({ top: 0, behavior: 'instant' }); 
                 }
               }}
             >
