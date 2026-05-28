@@ -173,6 +173,16 @@ img { max-width: 100%; height: auto; }
   font-size: 1rem;
 }
 
+/* ─── Grid centrado para última fila ─────────── */
+.grid-centered {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.grid-centered > [class*="col-"] {
+  flex: 0 0 auto;
+}
+
 /* ─── Carousel ───────────────────────────────── */
 .best-sellers-carousel { position: relative; }
 

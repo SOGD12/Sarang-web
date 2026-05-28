@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Brazalete Serpiente Dorada",
+    "category": "Brazaletes",
+    "price": 135000,
+    "description": "Brazalete rígido con diseño de serpiente en oro laminado",
+    "material": "Oro Laminado",
+    "image": "/img/coleccion/brazalates/1.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 2,
+    "name": "Brazalete Tejido Andino",
+    "category": "Brazaletes",
+    "price": 85000,
+    "description": "Brazalete trenzado a mano con hilos de colores y dije plateado",
+    "material": "Hilo y Plata",
+    "image": "/img/coleccion/brazalates/2.webp",
+    "tags": []
+  },
+  {
+    "id": 3,
+    "name": "Brazalete Vínculo Eterno",
+    "category": "Brazaletes",
+    "price": 120000,
+    "description": "Brazalete ajustable con cadena delgada y charms de corazón",
+    "material": "Plata Esterlina",
+    "image": "/img/coleccion/brazalates/3.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 4,
+    "name": "Brazalete Espiral de Plata",
+    "category": "Brazaletes",
+    "price": 110000,
+    "description": "Brazalete en espiral de plata con acabado martillado artesanal",
+    "material": "Plata",
+    "image": "/img/coleccion/brazalates/4.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 5,
+    "name": "Brazalete Tocado del Sol",
+    "category": "Brazaletes",
+    "price": 145000,
+    "description": "Brazalete ancho con incrustaciones de ámbar sintético",
+    "material": "Ámbar y Cobre",
+    "image": "/img/coleccion/brazalates/5.webp",
+    "tags": ["Edición Limitada"]
+  },
+  {
+    "id": 6,
+    "name": "Brazalete Nudo Marino",
+    "category": "Brazaletes",
+    "price": 78000,
+    "description": "Brazalete de cuerda encerada con nudo decorativo y cuenta de madera",
+    "material": "Cuerda y Madera",
+    "image": "/img/coleccion/brazalates/6.webp",
+    "tags": []
+  },
+  {
+    "id": 7,
+    "name": "Brazalete Dualidad",
+    "category": "Brazaletes",
+    "price": 160000,
+    "description": "Set de dos brazaletes delgados para usar juntos, oro y plata",
+    "material": "Oro y Plata",
+    "image": "/img/coleccion/brazalates/7.webp",
+    "tags": ["Nuevo"]
+  }
+]

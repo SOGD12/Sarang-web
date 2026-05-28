@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Anillo Solsticio",
+    "category": "Anillos",
+    "price": 150000,
+    "description": "Anillo artesanal con engaste de piedra luna",
+    "material": "Plata y Piedra Luna",
+    "image": "/img/coleccion/anillos/1.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 2,
+    "name": "Anillo Eslabón Dorado",
+    "category": "Anillos",
+    "price": 85000,
+    "description": "Anillo de eslabón ancho en baño de oro amarillo",
+    "material": "Oro Laminado",
+    "image": "/img/coleccion/anillos/2.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 3,
+    "name": "Anillo Aro Triple",
+    "category": "Anillos",
+    "price": 95000,
+    "description": "Set de tres anillos delgados entrelazados en plata",
+    "material": "Plata",
+    "image": "/img/coleccion/anillos/3.webp",
+    "tags": []
+  },
+  {
+    "id": 4,
+    "name": "Anillo Flor de Loto",
+    "category": "Anillos",
+    "price": 120000,
+    "description": "Anillo con diseño de flor de loto tallada en plata",
+    "material": "Plata",
+    "image": "/img/coleccion/anillos/4.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 5,
+    "name": "Anillo Corazón Latiente",
+    "category": "Anillos",
+    "price": 110000,
+    "description": "Anillo con pequeño corazón tallado y baño de rodio",
+    "material": "Rodio y Plata",
+    "image": "/img/coleccion/anillos/5.webp",
+    "tags": []
+  },
+  {
+    "id": 6,
+    "name": "Anillo Ola Plateada",
+    "category": "Anillos",
+    "price": 135000,
+    "description": "Anillo ondulado de plata con acabado martillado artesanal",
+    "material": "Plata Esterlina",
+    "image": "/img/coleccion/anillos/6.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 7,
+    "name": "Anillo Zafiro Estelar",
+    "category": "Anillos",
+    "price": 180000,
+    "description": "Anillo con zafiro sintético azul engastado en baño de oro blanco",
+    "material": "Zafiro y Oro Blanco",
+    "image": "/img/coleccion/anillos/7.webp",
+    "tags": ["Edición Limitada"]
+  }
+]

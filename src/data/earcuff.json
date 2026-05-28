@@ -1,0 +1,142 @@
+[
+  {
+    "id": 1,
+    "name": "Earcuff Minimalista",
+    "category": "Earcuff",
+    "price": 45000,
+    "description": "Earcuff delgado de plata para uso diario, sin perforación",
+    "material": "Plata",
+    "image": "/img/coleccion/earcuff/1.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 2,
+    "name": "Earcuff Hoja Dorada",
+    "category": "Earcuff",
+    "price": 55000,
+    "description": "Earcuff con forma de hoja en oro laminado para oreja izquierda",
+    "material": "Oro Laminado",
+    "image": "/img/coleccion/earcuff/2.webp",
+    "tags": []
+  },
+  {
+    "id": 3,
+    "name": "Earcuff Cadena Colgante",
+    "category": "Earcuff",
+    "price": 68000,
+    "description": "Earcuff con cadena delgada que rodea la oreja",
+    "material": "Plata Esterlina",
+    "image": "/img/coleccion/earcuff/3.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 4,
+    "name": "Earcuff Triple Aro",
+    "category": "Earcuff",
+    "price": 72000,
+    "description": "Earcuff con tres aros entrelazados en baño de oro rosa",
+    "material": "Oro Rosa",
+    "image": "/img/coleccion/earcuff/4.webp",
+    "tags": []
+  },
+  {
+    "id": 5,
+    "name": "Earcuff Lunar",
+    "category": "Earcuff",
+    "price": 58000,
+    "description": "Earcuff con media luna y detalles grabados a mano",
+    "material": "Plata",
+    "image": "/img/coleccion/earcuff/5.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 6,
+    "name": "Earcuff Geométrico",
+    "category": "Earcuff",
+    "price": 62000,
+    "description": "Earcuff con forma triangular angular en acabado mate",
+    "material": "Acero Quirúrgico",
+    "image": "/img/coleccion/earcuff/6.webp",
+    "tags": []
+  },
+  {
+    "id": 7,
+    "name": "Earcuff Espiral Infinita",
+    "category": "Earcuff",
+    "price": 75000,
+    "description": "Earcuff en espiral que se enrosca suavemente en el cartílago",
+    "material": "Plata",
+    "image": "/img/coleccion/earcuff/7.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 8,
+    "name": "Earcuff Perla Solitaria",
+    "category": "Earcuff",
+    "price": 82000,
+    "description": "Earcuff con perla cultivada en base dorada",
+    "material": "Oro y Perla",
+    "image": "/img/coleccion/earcuff/8.webp",
+    "tags": ["Edición Limitada"]
+  },
+  {
+    "id": 9,
+    "name": "Earcuff Pluma",
+    "category": "Earcuff",
+    "price": 49000,
+    "description": "Earcuff con diseño de pluma estilizada en plata",
+    "material": "Plata",
+    "image": "/img/coleccion/earcuff/9.webp",
+    "tags": []
+  },
+  {
+    "id": 10,
+    "name": "Earcuff Diamante Simulado",
+    "category": "Earcuff",
+    "price": 95000,
+    "description": "Earcuff con destello de zirconia cúbica en engaste dorado",
+    "material": "Zirconia y Oro",
+    "image": "/img/coleccion/earcuff/10.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 11,
+    "name": "Earcuff Ola del Mar",
+    "category": "Earcuff",
+    "price": 65000,
+    "description": "Earcuff ondulado con acabado martillado artesanal",
+    "material": "Cobre Enchapado",
+    "image": "/img/coleccion/earcuff/11.webp",
+    "tags": []
+  },
+  {
+    "id": 12,
+    "name": "Earcuff Doble Espíritu",
+    "category": "Earcuff",
+    "price": 88000,
+    "description": "Set de dos earcuffs delgados para combinar en una oreja",
+    "material": "Plata",
+    "image": "/img/coleccion/earcuff/12.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 13,
+    "name": "Earcuff Estrella Fugaz",
+    "category": "Earcuff",
+    "price": 59000,
+    "description": "Earcuff con pequeña estrella colgante en cadena fina",
+    "material": "Oro Laminado",
+    "image": "/img/coleccion/earcuff/13.webp",
+    "tags": []
+  },
+  {
+    "id": 14,
+    "name": "Earcuff Tribal",
+    "category": "Earcuff",
+    "price": 70000,
+    "description": "Earcuff ancho con patrones tribales grabados",
+    "material": "Acero Quirúrgico",
+    "image": "/img/coleccion/earcuff/14.webp",
+    "tags": []
+  }
+]

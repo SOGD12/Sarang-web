@@ -1,34 +1,25 @@
-import { useState, useMemo, useRef, useEffect } from 'react';
+import { useMemo, useRef, useEffect } from 'react';
 import { Container, Row, Col, Button, Card, Modal } from 'react-bootstrap';
 import { MessageCircle } from 'lucide-react';
 import { useParams, useNavigate } from 'react-router-dom';
-import productosData from '../data/productos.json';
+import { categories, getCategoryBySlug, slugify } from '../data/index.js';
 import NavbarSarah from './navbar';
 import Footer from './footer';
 
-const slugify = (str) => str.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '');
-const findCategory = (slug) => {
-  const cats = [...new Set(productosData.map(p => p.category))];
-  return cats.find(c => slugify(c) === slug) || null;
-};
-const findProductBySlug = (slug, category) => {
-  return productosData.find(p => slugify(p.name) === slug && p.category === category) || null;
+const findProductBySlug = (slug, categoryData) => {
+  return categoryData.find(p => slugify(p.name) === slug) || null;
 };
 
 const Collections = () => {
   const { category: categorySlug, productSlug } = useParams();
   const navigate = useNavigate();
-  const [showImageModal, setShowImageModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState(null);
   const productsRef = useRef(null);
-
-  const categories = useMemo(() => [...new Set(productosData.map(p => p.category))], []);
 
   const view = categorySlug ? 'products' : 'categories';
 
   const selectedCategory = useMemo(() => {
     if (!categorySlug) return null;
-    return findCategory(categorySlug);
+    return getCategoryBySlug(categorySlug);
   }, [categorySlug]);
 
   const handleCategoryClick = (cat) => {
@@ -45,21 +36,15 @@ const Collections = () => {
 
   const filteredProducts = useMemo(() => {
     if (!selectedCategory) return [];
-    return productosData.filter(p => p.category === selectedCategory);
+    return selectedCategory.data;
   }, [selectedCategory]);
 
-  useEffect(() => {
-    if (productSlug && selectedCategory) {
-      const product = findProductBySlug(productSlug, selectedCategory);
-      if (product) {
-        setSelectedProduct(product);
-        setShowImageModal(true);
-      }
-    } else {
-      setShowImageModal(false);
-      setSelectedProduct(null);
-    }
+  const selectedProduct = useMemo(() => {
+    if (!productSlug || !selectedCategory) return null;
+    return findProductBySlug(productSlug, selectedCategory.data) || null;
   }, [productSlug, selectedCategory]);
+
+  const showImageModal = selectedProduct !== null;
 
   useEffect(() => {
     if (view === 'products') {
@@ -76,8 +61,8 @@ const Collections = () => {
           <h1 className="font-serif fw-bold mb-3 collections-title">Colecciones</h1>
           {view === 'categories' ? (
             <p className="text-muted-gray max-w-600 mx-auto collections-desc">Piezas artesanales únicas, hechas a mano para ti</p>
-          ) : (
-            <p className="text-muted-gray max-w-600 mx-auto collections-desc">{selectedCategory}</p>
+          ) : selectedCategory && (
+            <p className="text-muted-gray max-w-600 mx-auto collections-desc">{selectedCategory.name}</p>
           )}
           {view === 'products' && (
             <Button
@@ -93,33 +78,30 @@ const Collections = () => {
 
       {view === 'categories' ? (
         <Container className="py-5">
-          <Row className="g-4">
-            {categories.map(cat => {
-              const catImage = productosData.find(p => p.category === cat)?.image;
-              return (
-                <Col key={cat} xs={6} sm={6} md={4} lg={3} className="mb-4">
+          <Row className="g-4 grid-centered">
+            {categories.map(cat => (
+                <Col key={cat.name} xs={6} sm={6} md={4} lg={3} className="mb-4">
                   <Card
                     className="collection-card h-100"
-                    onClick={() => handleCategoryClick(cat)}
+                    onClick={() => handleCategoryClick(cat.name)}
                   >
                     <Card.Img
                       variant="top"
-                      src={catImage}
-                      alt={cat}
+                      src={cat.cover}
+                      alt={cat.name}
                       className="collection-img"
                     />
                     <Card.ImgOverlay className="d-flex align-items-center justify-content-center">
-                      <h5 className="text-white mb-0">{cat}</h5>
+                      <h5 className="text-white mb-0">{cat.name}</h5>
                     </Card.ImgOverlay>
                   </Card>
                 </Col>
-              );
-            })}
+              ))}
           </Row>
         </Container>
       ) : (
         <Container className="py-5" ref={productsRef}>
-          <Row className="g-4">
+          <Row className="g-4 grid-centered">
             {filteredProducts.length > 0 ? (
               filteredProducts.map(product => (
                 <Col key={product.id} xs={6} sm={6} lg={3} className="mb-4">

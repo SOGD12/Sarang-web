@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "name": "Collar Amanecer Rose",
+    "category": "Collares",
+    "price": 180000,
+    "description": "Collar delicadamente tejido a mano con acentos en rose gold",
+    "material": "Rose Gold",
+    "image": "/img/coleccion/collares%20-%20cadenas/1.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 2,
+    "name": "Collar Infinito",
+    "category": "Collares",
+    "price": 210000,
+    "description": "Collar con diseño entrelazado en oro laminado",
+    "material": "Oro Laminado",
+    "image": "/img/coleccion/collares%20-%20cadenas/2.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 3,
+    "name": "Collar Bosque Encantado",
+    "category": "Collares",
+    "price": 195000,
+    "description": "Collar con colgante de hoja tallada y cadena trenzada",
+    "material": "Plata y Jade",
+    "image": "/img/coleccion/collares%20-%20cadenas/3.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 4,
+    "name": "Collar Brisa Tropical",
+    "category": "Collares",
+    "price": 170000,
+    "description": "Collar con cuentas de concha marina y detalles dorados",
+    "material": "Concha y Oro",
+    "image": "/img/coleccion/collares%20-%20cadenas/4.webp",
+    "tags": []
+  },
+  {
+    "id": 5,
+    "name": "Collar Lágrima de Luna",
+    "category": "Collares",
+    "price": 230000,
+    "description": "Collar con colgante de piedra luna tallada en forma de lágrima",
+    "material": "Plata y Piedra Luna",
+    "image": "/img/coleccion/collares%20-%20cadenas/5.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 6,
+    "name": "Collar Trenzado Artesanal",
+    "category": "Collares",
+    "price": 160000,
+    "description": "Collar trenzado a mano con hilo encerado y dije geométrico",
+    "material": "Hilo Encerado y Plata",
+    "image": "/img/coleccion/collares%20-%20cadenas/6.webp",
+    "tags": []
+  },
+  {
+    "id": 7,
+    "name": "Collar Esencia Floral",
+    "category": "Collares",
+    "price": 200000,
+    "description": "Collar con colgante de flor preservada en resina transparente",
+    "material": "Resina y Flor Natural",
+    "image": "/img/coleccion/collares%20-%20cadenas/7.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 8,
+    "name": "Collar Capa Dorada",
+    "category": "Collares",
+    "price": 250000,
+    "description": "Collar tipo gargantilla con capa de oro de 18k",
+    "material": "Oro 18k",
+    "image": "/img/coleccion/collares%20-%20cadenas/8.webp",
+    "tags": ["Edición Limitada"]
+  },
+  {
+    "id": 9,
+    "name": "Collar Gotas de Agua",
+    "category": "Collares",
+    "price": 185000,
+    "description": "Collar con múltiples cadenas delgadas y pequeñas gotas de cristal",
+    "material": "Cristal y Plata",
+    "image": "/img/coleccion/collares%20-%20cadenas/9.webp",
+    "tags": []
+  },
+  {
+    "id": 10,
+    "name": "Collar Misterio Nocturno",
+    "category": "Collares",
+    "price": 215000,
+    "description": "Collar con ónix negro engastado en plata oxidada",
+    "material": "Ónix y Plata",
+    "image": "/img/coleccion/collares%20-%20cadenas/10.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 11,
+    "name": "Collar Sol y Arena",
+    "category": "Collares",
+    "price": 175000,
+    "description": "Collar de cuentas doradas y tonos arena con cierre ajustable",
+    "material": "Cuentas Doradas",
+    "image": "/img/coleccion/collares%20-%20cadenas/11.webp",
+    "tags": ["Nuevo"]
+  }
+]

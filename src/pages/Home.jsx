@@ -10,6 +10,8 @@ import SobreNosotros from './SobreNosotros';
 import Testimonials from './Testimonials';
 
 import home from '../assets/img/home/incio/1.webp';
+// import homeMobile from '../assets/img/home/incio/Fondo movil.webp';
+import homeMobile from '../assets/img/home/incio/segal-jewelry-NsH-CvU0deg-unsplash.jpg';
 import bestSellers1 from '../assets/img/home/bests-sellers/1.webp';
 import bestSellers2 from '../assets/img/home/bests-sellers/2.webp';
 import bestSellers3 from '../assets/img/home/bests-sellers/3.webp';
@@ -108,6 +110,14 @@ const Home = () => {
     }
   }, []);
 
+  const [isMobileBg, setIsMobileBg] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobileBg(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const slideGroups = [];
   for (let i = 0; i < bestSellers.length; i += itemsPerSlide) {
     slideGroups.push(bestSellers.slice(i, i + itemsPerSlide));
@@ -119,7 +129,7 @@ const Home = () => {
 
       {/* Hero Section */}
       <div id="inicio" className="position-relative vh-100 d-flex align-items-center justify-content-center text-center"
-           style={{ backgroundImage: `url(${home})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
+           style={{ backgroundImage: `url(${isMobileBg ? homeMobile : home})`, backgroundSize: 'cover', backgroundPosition: 'center' }}>
         <div className="position-absolute top-0 start-0 w-100 h-100 hero-overlay"></div>
         <div className="position-relative z-1 text-dark px-4">
           <span className="badge rounded-pill bg-white text-dark px-3 py-2 mb-3 border shadow-sm font-label-caps">✦ HECHO A MANO · DESDE 2020</span>

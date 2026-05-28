@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "name": "Pulsera Eterna",
+    "category": "Pulseras",
+    "price": 85000,
+    "description": "Pulsera minimalista de hilo artesanal y cuentas de cristal",
+    "material": "Cristal y Seda",
+    "image": "/img/coleccion/pulseras/1.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 2,
+    "name": "Pulsera Mantra",
+    "category": "Pulseras",
+    "price": 70000,
+    "description": "Pulsera ajustable con piedras volcánicas",
+    "material": "Piedra Volcánica",
+    "image": "/img/coleccion/pulseras/2.webp",
+    "tags": []
+  },
+  {
+    "id": 3,
+    "name": "Pulsera Hilo Rojo",
+    "category": "Pulseras",
+    "price": 55000,
+    "description": "Pulsera de hilo rojo tejido a mano con dije dorado",
+    "material": "Hilo y Oro",
+    "image": "/img/coleccion/pulseras/3.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 4,
+    "name": "Pulsera Océano",
+    "category": "Pulseras",
+    "price": 95000,
+    "description": "Pulsera de cuentas azules con cierre dorado ajustable",
+    "material": "Cuentas de Vidrio",
+    "image": "/img/coleccion/pulseras/4.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 5,
+    "name": "Pulsera Cadena Solar",
+    "category": "Pulseras",
+    "price": 120000,
+    "description": "Pulsera tipo tenis con eslabones dorados y strass",
+    "material": "Oro 14k y Strass",
+    "image": "/img/coleccion/pulseras/5.webp",
+    "tags": ["Edición Limitada"]
+  },
+  {
+    "id": 6,
+    "name": "Pulsera Nudo Marino",
+    "category": "Pulseras",
+    "price": 68000,
+    "description": "Pulsera de cuerda náutica con dije de ancla plateado",
+    "material": "Cuerda y Plata",
+    "image": "/img/coleccion/pulseras/6.webp",
+    "tags": []
+  },
+  {
+    "id": 7,
+    "name": "Pulsera Flores Secas",
+    "category": "Pulseras",
+    "price": 78000,
+    "description": "Pulsera con cápsula de resina y flores secas preservadas",
+    "material": "Resina y Flores",
+    "image": "/img/coleccion/pulseras/7.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 8,
+    "name": "Pulsera Cuarzo Rosado",
+    "category": "Pulseras",
+    "price": 90000,
+    "description": "Pulsera de cuarzo rosa engarzado en alambre plateado",
+    "material": "Cuarzo Rosa y Plata",
+    "image": "/img/coleccion/pulseras/8.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 9,
+    "name": "Pulsera Lazo Infinito",
+    "category": "Pulseras",
+    "price": 65000,
+    "description": "Pulsera de lazo ajustable con nudo decorativo y charms",
+    "material": "Seda y Plata",
+    "image": "/img/coleccion/pulseras/9.webp",
+    "tags": []
+  }
+]

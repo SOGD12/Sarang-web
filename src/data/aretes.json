@@ -1,0 +1,162 @@
+[
+  {
+    "id": 1,
+    "name": "Aretes Luna Negra",
+    "category": "Aretes",
+    "price": 120000,
+    "description": "Elegantes aretes con piedras naturales negras y detalles en oro",
+    "material": "Oro y Piedra Natural",
+    "image": "/img/coleccion/aretes/1.webp",
+    "tags": ["Favorito", "Edición Limitada"]
+  },
+  {
+    "id": 2,
+    "name": "Aretes Gotas de Rocío",
+    "category": "Aretes",
+    "price": 95000,
+    "description": "Sutiles aretes de perlas cultivadas a mano",
+    "material": "Perlas",
+    "image": "/img/coleccion/aretes/2.webp",
+    "tags": []
+  },
+  {
+    "id": 3,
+    "name": "Aretes Sol Dorado",
+    "category": "Aretes",
+    "price": 110000,
+    "description": "Aretes circulares con baño de oro y textura artesanal",
+    "material": "Oro Laminado",
+    "image": "/img/coleccion/aretes/3.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 4,
+    "name": "Aretes Brisa Marina",
+    "category": "Aretes",
+    "price": 85000,
+    "description": "Aretes tejidos a mano con hilo de seda y cuentas de cristal",
+    "material": "Seda y Cristal",
+    "image": "/img/coleccion/aretes/4.webp",
+    "tags": []
+  },
+  {
+    "id": 5,
+    "name": "Aretes Eclipse",
+    "category": "Aretes",
+    "price": 135000,
+    "description": "Aretes geométricos con piedra luna y plata",
+    "material": "Plata y Piedra Luna",
+    "image": "/img/coleccion/aretes/5.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 6,
+    "name": "Aretes Lluvia de Estrellas",
+    "category": "Aretes",
+    "price": 98000,
+    "description": "Delicados aretes colgantes con cristales tallados",
+    "material": "Cristal Checo",
+    "image": "/img/coleccion/aretes/6.webp",
+    "tags": []
+  },
+  {
+    "id": 7,
+    "name": "Aretes Terciopelo",
+    "category": "Aretes",
+    "price": 105000,
+    "description": "Aretes de terciopelo con detalle dorado y perla",
+    "material": "Terciopelo y Oro",
+    "image": "/img/coleccion/aretes/7.webp",
+    "tags": ["Edición Limitada"]
+  },
+  {
+    "id": 8,
+    "name": "Aretes Mar Eterno",
+    "category": "Aretes",
+    "price": 125000,
+    "description": "Aretes con aguamarina tallada y baño de plata",
+    "material": "Aguamarina y Plata",
+    "image": "/img/coleccion/aretes/8.webp",
+    "tags": []
+  },
+  {
+    "id": 9,
+    "name": "Aretes Bohemia",
+    "category": "Aretes",
+    "price": 78000,
+    "description": "Aretes largos estilo bohemio con plumas y mostacillas",
+    "material": "Pluma y Mostacilla",
+    "image": "/img/coleccion/aretes/9.webp",
+    "tags": []
+  },
+  {
+    "id": 10,
+    "name": "Aretes Nido de Abeja",
+    "category": "Aretes",
+    "price": 115000,
+    "description": "Aretes hexagonales en oro con detalle de panal",
+    "material": "Oro 14k",
+    "image": "/img/coleccion/aretes/10.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 11,
+    "name": "Aretes Cielo Nocturno",
+    "category": "Aretes",
+    "price": 140000,
+    "description": "Aretes con zafiros sintéticos y baño de rodio",
+    "material": "Zafiro y Rodio",
+    "image": "/img/coleccion/aretes/11.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 12,
+    "name": "Aretes Hilo Dorado",
+    "category": "Aretes",
+    "price": 89000,
+    "description": "Aretes tejidos en hilo dorado con forma de lágrima",
+    "material": "Hilo Metálico",
+    "image": "/img/coleccion/aretes/12.webp",
+    "tags": []
+  },
+  {
+    "id": 13,
+    "name": "Aretes Coral",
+    "category": "Aretes",
+    "price": 99000,
+    "description": "Aretes orgánicos con cuentas de coral sintético",
+    "material": "Coral Sintético",
+    "image": "/img/coleccion/aretes/13.webp",
+    "tags": []
+  },
+  {
+    "id": 14,
+    "name": "Aretes Centelleo",
+    "category": "Aretes",
+    "price": 155000,
+    "description": "Aretes de strass con baño de oro rosa",
+    "material": "Strass y Oro Rosa",
+    "image": "/img/coleccion/aretes/14.webp",
+    "tags": ["Edición Limitada"]
+  },
+  {
+    "id": 15,
+    "name": "Aretes Raíz",
+    "category": "Aretes",
+    "price": 92000,
+    "description": "Aretes orgánicos con forma de raíz en plata reciclada",
+    "material": "Plata Reciclada",
+    "image": "/img/coleccion/aretes/15.webp",
+    "tags": ["Sustentable"]
+  },
+  {
+    "id": 16,
+    "name": "Aretes Duende",
+    "category": "Aretes",
+    "price": 108000,
+    "description": "Aretes divertidos con figuras geométricas esmaltadas",
+    "material": "Esmalte y Cobre",
+    "image": "/img/coleccion/aretes/16.webp",
+    "tags": []
+  }
+]

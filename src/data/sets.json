@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "name": "Set Brisa Marina",
+    "category": "Sets",
+    "price": 250000,
+    "description": "Conjunto de aretes y collar inspirados en la costa colombiana",
+    "material": "Plata y Perlas",
+    "image": "/img/coleccion/sets/1.webp",
+    "tags": ["Edición Especial"]
+  },
+  {
+    "id": 2,
+    "name": "Set Elegancia Nupcial",
+    "category": "Sets",
+    "price": 320000,
+    "description": "Set de collar, aretes y pulsera con perlas cultivadas",
+    "material": "Perlas Cultivadas",
+    "image": "/img/coleccion/sets/2.webp",
+    "tags": ["Favorito"]
+  },
+  {
+    "id": 3,
+    "name": "Set Dúo Dorado",
+    "category": "Sets",
+    "price": 280000,
+    "description": "Conjunto de aretes colgantes y collar a juego en oro",
+    "material": "Oro 18k",
+    "image": "/img/coleccion/sets/3.webp",
+    "tags": ["Nuevo"]
+  },
+  {
+    "id": 4,
+    "name": "Set Bohemio",
+    "category": "Sets",
+    "price": 195000,
+    "description": "Set de pulsera y collar con mostacillas coloridas",
+    "material": "Mostacilla y Seda",
+    "image": "/img/coleccion/sets/4.webp",
+    "tags": []
+  },
+  {
+    "id": 5,
+    "name": "Set Minimalista",
+    "category": "Sets",
+    "price": 220000,
+    "description": "Set de aretes de argolla y collar fino en plata",
+    "material": "Plata Esterlina",
+    "image": "/img/coleccion/sets/5.webp",
+    "tags": ["Edición Limitada"]
+  }
+]

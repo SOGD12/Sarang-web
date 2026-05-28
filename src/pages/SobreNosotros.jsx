@@ -23,8 +23,8 @@ const SobreNosotros = () => {
             <p className="text-muted-gray mb-4">Desde nuestra fundación en 2020, nos hemos dedicado a redefinir la belleza a través de piezas hechas totalmente a mano.</p>
             <p className="text-muted-gray mb-4">Cada diseño es una exploración de texturas y formas que celebran la individualidad de quien las porta.</p>
             <div className="d-flex align-items-baseline gap-2 mb-4 justify-content-center justify-content-md-start">
-              <span className="font-serif text-rose-gold display-6 fw-bold">+ 4 años</span>
-              <span className="text-muted-gray">creando piezas únicas</span>
+              {/* <span className="font-serif text-rose-gold display-6 fw-bold">+ 4 años</span> */}
+              <span className="text-rose-gold font-label-caps">Creando piezas únicas</span>
             </div>
             <Button variant="outline-dark" className="rounded-pill px-4 py-2 font-label-caps">CONOCER MÁS</Button>
           </Col>
